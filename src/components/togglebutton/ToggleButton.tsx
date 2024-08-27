@@ -10,7 +10,7 @@ export default function ToggleButtonNotEmpty() {
   const [alignment, setAlignment] = React.useState("left");
 
   const handleAlignment = (
-    event: React.MouseEvent<HTMLElement>,
+    _: React.MouseEvent<HTMLElement>,
     newAlignment: string | null
   ) => {
     if (newAlignment !== null) {
