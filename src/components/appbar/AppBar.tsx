@@ -3,8 +3,8 @@ import {
   Toolbar,
   Typography,
   IconButton,
-  Button,
   Stack,
+  Button,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu"; // Import the MenuIcon component from Material-UI
 import { useState } from "react";
@@ -14,6 +14,10 @@ import InputBase from "@mui/material/InputBase";
 
 const AppBarComponent = () => {
   const [theme, setTheme] = useState<"dark" | "light">("light");
+
+  const handleThemeChange = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
   return (
     <AppBar
       position="relative"
@@ -37,13 +41,11 @@ const AppBarComponent = () => {
         >
           Leo Profile
         </Typography>
-        <Stack
-          direction="row"
-          flexDirection={"row"}
-          sx={{ alignItems: "right", flexGrow: 1 }}
-        >
+        <Stack flexDirection={"row"} sx={{ alignItems: "right", flexGrow: 1 }}>
           <Search>
-            <SearchIconWrapper>
+            <SearchIconWrapper
+              sx={{ color: theme === "dark" ? "white" : "black" }}
+            >
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
@@ -51,6 +53,9 @@ const AppBarComponent = () => {
               inputProps={{ "aria-label": "search" }}
             />
           </Search>
+        </Stack>
+        <Stack>
+          <Button onClick={handleThemeChange}>Theme</Button>
         </Stack>
       </Toolbar>
     </AppBar>
