@@ -11,6 +11,7 @@ import { useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import { styled, alpha } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
+import ToggleButtonNotEmpty from "../togglebutton";
 
 const AppBarComponent = () => {
   const [theme, setTheme] = useState<"dark" | "light">("light");
@@ -55,7 +56,9 @@ const AppBarComponent = () => {
           </Search>
         </Stack>
         <Stack>
-          <Button onClick={handleThemeChange}>Theme</Button>
+          <Button onClick={handleThemeChange}>
+            <ToggleButtonNotEmpty />
+          </Button>
         </Stack>
       </Toolbar>
     </AppBar>
