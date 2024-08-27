@@ -1,45 +1,102 @@
-import { AppBar, Toolbar, Typography, IconButton } from "@mui/material";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  IconButton,
+  Button,
+  Stack,
+} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu"; // Import the MenuIcon component from Material-UI
-
-<style>
-  {`
-    .appbar {
-      background-color: white;
-      width: 100%;
-      border-bottom: 1px solid #e0e0e0;
-    }
-
-    .menu-icon {
-      margin-right: 16px;
-      color: blue;
-    }
-
-    .title {
-      font-family: 'Poppins', sans-serif;
-      font-size: 2rem;
-      font-weight: 600;
-      color: #333;
-      letter-spacing: 0.05em;
-      text-transform: capitalize;
-      margin: 0;
-      padding: 0;
-    }
-  `}
-</style>;
+import { useState } from "react";
+import SearchIcon from "@mui/icons-material/Search";
+import { styled, alpha } from "@mui/material/styles";
+import InputBase from "@mui/material/InputBase";
 
 const AppBarComponent = () => {
+  const [theme, setTheme] = useState<"dark" | "light">("light");
   return (
-    <AppBar position="relative" className="appbar">
-      <Toolbar variant="dense">
+    <AppBar
+      position="relative"
+      className="appbar"
+      sx={{
+        background: theme === "dark" ? "black" : "white",
+        padding: "3px 3px",
+      }}
+    >
+      <Toolbar
+        variant="dense"
+        sx={{ display: "flex", justifyContent: "space-between" }}
+      >
         <IconButton edge="start" aria-label="menu" className="menu-icon">
           <MenuIcon />
         </IconButton>
-        <Typography variant="h6" component="div" className="title">
+        <Typography
+          variant="h6"
+          component="div"
+          sx={{ color: theme == "light" ? "black" : "white" }}
+        >
           Leo Profile
         </Typography>
+        <Stack
+          direction="row"
+          flexDirection={"row"}
+          sx={{ alignItems: "right", flexGrow: 1 }}
+        >
+          <Search>
+            <SearchIconWrapper>
+              <SearchIcon />
+            </SearchIconWrapper>
+            <StyledInputBase
+              placeholder="Search…"
+              inputProps={{ "aria-label": "search" }}
+            />
+          </Search>
+        </Stack>
       </Toolbar>
     </AppBar>
   );
 };
+
+const Search = styled("div")(({ theme }) => ({
+  position: "relative",
+  borderRadius: theme.shape.borderRadius,
+  backgroundColor: alpha(theme.palette.common.white, 0.15),
+  "&:hover": {
+    backgroundColor: alpha(theme.palette.common.white, 0.25),
+  },
+  marginLeft: 0,
+  width: "100%",
+  [theme.breakpoints.up("sm")]: {
+    marginLeft: theme.spacing(1),
+    width: "auto",
+  },
+}));
+
+const SearchIconWrapper = styled("div")(({ theme }) => ({
+  padding: theme.spacing(0, 2),
+  height: "100%",
+  position: "absolute",
+  pointerEvents: "none",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+}));
+
+const StyledInputBase = styled(InputBase)(({ theme }) => ({
+  color: "inherit",
+  width: "100%",
+  "& .MuiInputBase-input": {
+    padding: theme.spacing(1, 1, 1, 0),
+    // vertical padding + font size from searchIcon
+    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+    transition: theme.transitions.create("width"),
+    [theme.breakpoints.up("sm")]: {
+      width: "12ch",
+      "&:focus": {
+        width: "20ch",
+      },
+    },
+  },
+}));
 
 export default AppBarComponent;
