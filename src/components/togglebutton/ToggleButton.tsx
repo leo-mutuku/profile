@@ -6,7 +6,14 @@ import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import NightlightRoundOutlinedIcon from "@mui/icons-material/NightlightRoundOutlined";
 
-export default function ToggleButtonNotEmpty() {
+type ToggleButtonGroupProps = {
+  handleThemeChange: (value: string) => string;
+  themeValue: string;
+};
+export default function ToggleButtonNotEmpty({
+  handleThemeChange,
+  themeValue,
+}: ToggleButtonGroupProps) {
   const [alignment, setAlignment] = React.useState("left");
 
   const handleAlignment = (
@@ -15,6 +22,7 @@ export default function ToggleButtonNotEmpty() {
   ) => {
     if (newAlignment !== null) {
       setAlignment(newAlignment);
+      handleThemeChange(newAlignment === "left" ? "dark" : "light"); // Trigger theme change
     }
   };
 
@@ -27,11 +35,15 @@ export default function ToggleButtonNotEmpty() {
         aria-label="text alignment"
       >
         <ToggleButton value="left" aria-label="left aligned" size="small">
-          <LightModeOutlinedIcon />
+          <LightModeOutlinedIcon
+            sx={{ color: themeValue === "dark" ? "white" : "black" }}
+          />
         </ToggleButton>
 
         <ToggleButton value="right" aria-label="right aligned" size="small">
-          <NightlightRoundOutlinedIcon />
+          <NightlightRoundOutlinedIcon
+            sx={{ color: themeValue === "dark" ? "white" : "black" }}
+          />
         </ToggleButton>
       </ToggleButtonGroup>
     </Stack>

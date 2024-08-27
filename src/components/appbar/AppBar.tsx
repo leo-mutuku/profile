@@ -1,12 +1,5 @@
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  IconButton,
-  Stack,
-  Button,
-} from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu"; // Import the MenuIcon component from Material-UI
+import { AppBar, Toolbar, Typography, Stack, Button } from "@mui/material";
+
 import { useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import { styled, alpha } from "@mui/material/styles";
@@ -16,8 +9,8 @@ import ToggleButtonNotEmpty from "../togglebutton";
 const AppBarComponent = () => {
   const [theme, setTheme] = useState<"dark" | "light">("light");
 
-  const handleThemeChange = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
+  const handleThemeChange = (value: string) => {
+    setTheme(value === "dark" ? "light" : "dark");
   };
   return (
     <AppBar
@@ -32,9 +25,6 @@ const AppBarComponent = () => {
         variant="dense"
         sx={{ display: "flex", justifyContent: "space-between" }}
       >
-        <IconButton edge="start" aria-label="menu" className="menu-icon">
-          <MenuIcon />
-        </IconButton>
         <Typography
           variant="h6"
           component="div"
@@ -56,8 +46,11 @@ const AppBarComponent = () => {
           </Search>
         </Stack>
         <Stack>
-          <Button onClick={handleThemeChange}>
-            <ToggleButtonNotEmpty />
+          <Button>
+            <ToggleButtonNotEmpty
+              handleThemeChange={handleThemeChange}
+              themeValue={theme}
+            />
           </Button>
         </Stack>
       </Toolbar>
