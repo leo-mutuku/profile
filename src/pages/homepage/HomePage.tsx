@@ -31,9 +31,10 @@ const HomePage = ({ themeValue }: HomePageProps) => {
           src="/profile.webp" // Path to your image in the public folder
           alt="Description of image"
           sx={{
+            marginTop: "60%",
             borderRadius: "50%", // Makes the image circular
-            width: "100px", // Fixed width
-            height: "100px", // Fixed height
+            width: "40%", // Fixed width
+            height: "400%", // Fixed height
             objectFit: "cover", // Ensures the image covers the area while maintaining aspect ratio
           }}
         />
