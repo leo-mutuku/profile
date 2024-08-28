@@ -33,8 +33,8 @@ const HomePage = ({ themeValue }: HomePageProps) => {
           sx={{
             marginTop: "60%",
             borderRadius: "50%", // Makes the image circular
-            width: "40%", // Fixed width
-            height: "400%", // Fixed height
+            width: "200px", // Fixed width
+            height: "200px", // Fixed height
             objectFit: "cover", // Ensures the image covers the area while maintaining aspect ratio
           }}
         />
