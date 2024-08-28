@@ -7,7 +7,7 @@ import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import NightlightRoundOutlinedIcon from "@mui/icons-material/NightlightRoundOutlined";
 
 type ToggleButtonGroupProps = {
-  handleThemeChange: (value: string) => string;
+  handleThemeChange: (value: "dark" | "light") => void;
   themeValue: string;
 };
 export default function ToggleButtonNotEmpty({
