@@ -12,8 +12,8 @@ const AppBarComponent = ({
 }: AppBarComponentProps) => {
   return (
     <AppBar
-      position="relative"
-      className="appbar"
+      position="sticky"
+      elevation={0}
       sx={{
         background: themeValue === "dark" ? "black" : "white",
         padding: "3px 3px",
@@ -30,6 +30,7 @@ const AppBarComponent = ({
         >
           Leo Profile
         </Typography>
+        <Stack></Stack>
 
         <Stack>
           <Button>
