@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, Typography, Stack, Button } from "@mui/material";
+import { AppBar, Toolbar, Typography, Stack, Button, Box } from "@mui/material";
 
 import ToggleButtonNotEmpty from "../togglebutton";
 type AppBarComponentProps = {
@@ -23,14 +23,22 @@ const AppBarComponent = ({
         variant="dense"
         sx={{ display: "flex", justifyContent: "space-between" }}
       >
-        <Typography
-          variant="h6"
-          component="div"
-          sx={{ color: themeValue == "light" ? "black" : "white" }}
+        <Box
+          display="flex"
+          flexDirection="row"
+          justifyContent="space-between"
+          alignItems="center"
+          p={1}
         >
-          Leo Profile
-        </Typography>
-        <Stack></Stack>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ color: themeValue == "light" ? "black" : "white" }}
+          >
+            Leo Mutuku
+          </Typography>
+          <Button>Projects</Button>
+        </Box>
 
         <Stack>
           <Button>
