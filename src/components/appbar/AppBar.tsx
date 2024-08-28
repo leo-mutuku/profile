@@ -35,7 +35,7 @@ const AppBarComponent = ({
             component="div"
             sx={{
               fontFamily: "'Courier New', monospace",
-              fontSize: "38px",
+              fontSize: { xs: "20px", md: "38px" },
               color: themeValue === "light" ? "black" : "#ff4500",
               textAlign: "center",
               background: "linear-gradient(to right, #ffdf00, #ff4500)",
@@ -45,27 +45,7 @@ const AppBarComponent = ({
               letterSpacing: "2px",
             }}
           >
-            Leo Mutuku's
-          </Typography>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{
-              fontFamily: "'Courier New', monospace",
-              fontSize: "15px",
-              color: themeValue === "light" ? "black" : "#ff4500",
-              textAlign: "center",
-              background: "linear-gradient(to right, #ffdf00, #ff4500)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              textShadow: "4px 4px 0 rgba(0,0,0,0.1)",
-              letterSpacing: "2px",
-              position: "absolute",
-              left: "15%",
-              top: "70%",
-            }}
-          >
-            Profile
+            Leo Mutuku's Profile.
           </Typography>
         </Box>
 
