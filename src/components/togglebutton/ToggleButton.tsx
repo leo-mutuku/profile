@@ -35,13 +35,13 @@ export default function ToggleButtonNotEmpty({
         aria-label="text alignment"
       >
         <ToggleButton value="left" aria-label="left aligned" size="small">
-          <LightModeOutlinedIcon
+          <NightlightRoundOutlinedIcon
             sx={{ color: themeValue === "dark" ? "white" : "black" }}
           />
         </ToggleButton>
 
         <ToggleButton value="right" aria-label="right aligned" size="small">
-          <NightlightRoundOutlinedIcon
+          <LightModeOutlinedIcon
             sx={{ color: themeValue === "dark" ? "white" : "black" }}
           />
         </ToggleButton>

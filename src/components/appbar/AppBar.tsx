@@ -33,11 +33,40 @@ const AppBarComponent = ({
           <Typography
             variant="h6"
             component="div"
-            sx={{ color: themeValue == "light" ? "black" : "white" }}
+            sx={{
+              fontFamily: "'Courier New', monospace",
+              fontSize: "38px",
+              color: themeValue === "light" ? "black" : "#ff4500",
+              textAlign: "center",
+              background: "linear-gradient(to right, #ffdf00, #ff4500)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              textShadow: "4px 4px 0 rgba(0,0,0,0.1)",
+              letterSpacing: "2px",
+            }}
           >
-            Leo Mutuku
+            Leo Mutuku's
           </Typography>
-          <Button>Projects</Button>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{
+              fontFamily: "'Courier New', monospace",
+              fontSize: "15px",
+              color: themeValue === "light" ? "black" : "#ff4500",
+              textAlign: "center",
+              background: "linear-gradient(to right, #ffdf00, #ff4500)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              textShadow: "4px 4px 0 rgba(0,0,0,0.1)",
+              letterSpacing: "2px",
+              position: "absolute",
+              left: "15%",
+              top: "70%",
+            }}
+          >
+            Profile
+          </Typography>
         </Box>
 
         <Stack>

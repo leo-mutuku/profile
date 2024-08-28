@@ -16,16 +16,6 @@ interface AutoCompleteInputProps {
   label?: string;
 }
 
-// Define validation schema using Yup
-// const schema = yup.object().shape({
-//   selectedOption: yup
-//     .object()
-//     .shape({
-//       label: yup.string().required("Option is required"),
-//     })
-//     .required("Option is required"),
-// });
-
 const AutoCompleteInputComponent: React.FC<AutoCompleteInputProps> = ({
   name,
   options,
