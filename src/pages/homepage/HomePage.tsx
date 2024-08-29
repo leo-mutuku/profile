@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import StepperComponent from "../../components/steppercomponent";
 import { FaGithub } from "react-icons/fa";
@@ -31,46 +31,47 @@ const HomePage = ({ themeValue }: HomePageProps) => {
             alignItems: "center", // Center vertically
           }}
         >
-          <Box
-            component="img"
-            src="/profile.webp" // Path to your image in the public folder
-            alt="Description of image"
-            sx={{
-              marginTop: "60%",
-              borderRadius: "50%", // Makes the image circular
-              width: "200px", // Fixed width
-              height: "200px", // Fixed height
-              objectFit: "cover", // Ensures the image covers the area while maintaining aspect ratio
-            }}
-          />
-          <h6
-            style={{ color: "white", position: "absolute", marginTop: "50%" }}
-          >
-            Frontend Software Developer
-          </h6>
+          <Stack sx={{ marginTop: "60%" }}>
+            <Box
+              component="img"
+              src="/profile.webp" // Path to your image in the public folder
+              alt="Description of image"
+              sx={{
+                borderRadius: "50%", // Makes the image circular
+                width: "200px", // Fixed width
+                height: "200px", // Fixed height
+                objectFit: "cover", // Ensures the image covers the area while maintaining aspect ratio
+              }}
+            />
+            <br />
+            <h6 style={{ color: "white", position: "relative" }}>
+              Frontend Software Developer
+            </h6>
+            <br></br>
 
-          <Box
-            style={{
-              color: "white",
-              position: "absolute",
-              marginTop: "55%",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              width: "100%",
-              textAlign: "center",
-            }}
-          >
-            <span>
-              <FaGithub size={25} />
-            </span>{" "}
-            &nbsp; &nbsp;
-            <span>
-              <CiLinkedin size={25} />
-            </span>{" "}
-            &nbsp; &nbsp;
-            <FaXTwitter size={25} />
-          </Box>
+            <Box
+              style={{
+                color: "white",
+                position: "relative",
+
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                width: "100%",
+                textAlign: "center",
+              }}
+            >
+              <span>
+                <FaGithub size={25} />
+              </span>{" "}
+              &nbsp; &nbsp;
+              <span>
+                <CiLinkedin size={25} />
+              </span>{" "}
+              &nbsp; &nbsp;
+              <FaXTwitter size={25} />
+            </Box>
+          </Stack>
         </Grid>
         <Grid
           item
