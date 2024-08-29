@@ -119,7 +119,7 @@ const ProjectsPage = ({ themeValue }: HomePageProps) => {
                 }}
               >
                 <img
-                  src="./bluetrax-profile-img.png"
+                  src="./amini-ai-profileimg.png"
                   alt="Profile"
                   style={{
                     width: "100%",
@@ -127,12 +127,11 @@ const ProjectsPage = ({ themeValue }: HomePageProps) => {
                     objectFit: "cover", // Ensure the image fully covers the Box
                     cursor: "pointer",
                   }}
-                  onClick={() => handleImageClick("./bluetrax-profile-img.png")}
+                  onClick={() => handleImageClick("./amini-ai-profileimg.png")}
                 />
               </Box>
             </Stack>
           </Grid>
-
           <Grid
             item
             sx={{
@@ -142,6 +141,8 @@ const ProjectsPage = ({ themeValue }: HomePageProps) => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              padding: 0, // Ensure no padding
+              margin: 0, // Ensure no margin
             }}
           >
             <Stack
@@ -151,31 +152,35 @@ const ProjectsPage = ({ themeValue }: HomePageProps) => {
                 alignItems: "center",
                 height: "100%",
                 width: "100%",
+                padding: 0, // Ensure no padding
+                margin: 0, // Ensure no margin
               }}
             >
               <Box
                 sx={{
-                  width: { xs: "10rem", md: "20rem" },
-                  height: { xs: "7.5rem", md: "15rem" },
+                  width: "100%", // Make the Box cover the entire Stack
+                  height: "100%", // Make the Box cover the entire Stack
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
+                  padding: 0, // Ensure no padding
+                  margin: 0, // Ensure no margin
                 }}
               >
                 <img
                   src="./novena.PNG"
+                  alt="Profile"
                   style={{
                     width: "100%",
                     height: "100%",
-                    objectFit: "cover",
-                    cursor: "pointer", // Pointer cursor to indicate it's clickable
+                    objectFit: "cover", // Ensure the image fully covers the Box
+                    cursor: "pointer",
                   }}
                   onClick={() => handleImageClick("./novena.PNG")}
                 />
               </Box>
             </Stack>
           </Grid>
-
           <Grid
             item
             sx={{
@@ -185,6 +190,8 @@ const ProjectsPage = ({ themeValue }: HomePageProps) => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              padding: 0, // Ensure no padding
+              margin: 0, // Ensure no margin
             }}
           >
             <Stack
@@ -194,24 +201,29 @@ const ProjectsPage = ({ themeValue }: HomePageProps) => {
                 alignItems: "center",
                 height: "100%",
                 width: "100%",
+                padding: 0, // Ensure no padding
+                margin: 0, // Ensure no margin
               }}
             >
               <Box
                 sx={{
-                  width: { xs: "10rem", md: "20rem" },
-                  height: { xs: "7.5rem", md: "15rem" },
+                  width: "100%", // Make the Box cover the entire Stack
+                  height: "100%", // Make the Box cover the entire Stack
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
+                  padding: 0, // Ensure no padding
+                  margin: 0, // Ensure no margin
                 }}
               >
                 <img
                   src="./scriptfund-profileimg.png"
+                  alt="Profile"
                   style={{
                     width: "100%",
                     height: "100%",
-                    objectFit: "cover",
-                    cursor: "pointer", // Pointer cursor to indicate it's clickable
+                    objectFit: "cover", // Ensure the image fully covers the Box
+                    cursor: "pointer",
                   }}
                   onClick={() =>
                     handleImageClick("./scriptfund-profileimg.png")
