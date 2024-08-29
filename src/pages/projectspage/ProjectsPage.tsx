@@ -92,11 +92,7 @@ const ProjectsPage = ({ themeValue }: HomePageProps) => {
                   alignItems: "center", // Center vertically
                 }}
               >
-                <Doughnut
-                  data={data}
-                  options={options}
-                  plugins={[centerTextPlugin]}
-                />
+                <img src="./amini-ai-profileimg.png" />
               </Box>
             </Stack>
           </Grid>
@@ -174,6 +170,7 @@ const ProjectsPage = ({ themeValue }: HomePageProps) => {
               </Box>
             </Stack>
           </Grid>
+
           <Grid
             item
             sx={{
@@ -203,85 +200,7 @@ const ProjectsPage = ({ themeValue }: HomePageProps) => {
                   alignItems: "center", // Center vertically
                 }}
               >
-                <Doughnut
-                  data={data}
-                  options={options}
-                  plugins={[centerTextPlugin]}
-                />
-              </Box>
-            </Stack>
-          </Grid>
-          <Grid
-            item
-            sx={{
-              flex: { xs: "1 0 15rem", md: "1 0 25rem" },
-              height: { xs: "15rem", md: "30rem" },
-              background: "transparent",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <Stack
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                height: "100%",
-                width: "100%", // Ensure the chart takes up the full width
-              }}
-            >
-              <Box
-                sx={{
-                  width: { xs: "10rem", md: "20rem" },
-                  height: { xs: "7.5rem", md: "15rem" },
-                  display: "flex",
-                  justifyContent: "center", // Center horizontally
-                  alignItems: "center", // Center vertically
-                }}
-              >
-                <Doughnut
-                  data={data}
-                  options={options}
-                  plugins={[centerTextPlugin]}
-                />
-              </Box>
-            </Stack>
-          </Grid>
-          <Grid
-            item
-            sx={{
-              flex: { xs: "1 0 15rem", md: "1 0 25rem" },
-              height: { xs: "15rem", md: "30rem" },
-              background: "transparent",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <Stack
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                height: "100%",
-                width: "100%", // Ensure the chart takes up the full width
-              }}
-            >
-              <Box
-                sx={{
-                  width: { xs: "10rem", md: "20rem" },
-                  height: { xs: "7.5rem", md: "15rem" },
-                  display: "flex",
-                  justifyContent: "center", // Center horizontally
-                  alignItems: "center", // Center vertically
-                }}
-              >
-                <Doughnut
-                  data={data}
-                  options={options}
-                  plugins={[centerTextPlugin]}
-                />
+                <img src="./scriptfund-profileimg.png" />
               </Box>
             </Stack>
           </Grid>
