@@ -230,27 +230,29 @@ const ProjectsPage = ({ themeValue }: HomePageProps) => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              backgroundColor: "rgba(0, 0, 0, 0.5)", // Dark overlay
+              backgroundColor: "rgba(0, 0, 0, 0.7)", // Slightly darker overlay for better contrast
             }}
           >
             <Box
               sx={{
-                width: { xs: "80vw", md: "80vw" },
-                height: { xs: "80vh", md: "80vh" },
+                maxWidth: "90vw", // Limit max width to 90% of viewport width
+                maxHeight: "90vh", // Limit max height to 90% of viewport height
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
                 backgroundColor: "white",
-                boxShadow: 24, // Adds a shadow effect
-                p: 2,
+                boxShadow: 24, // Shadow effect
+                overflow: "hidden", // Prevent overflow
               }}
             >
               <img
                 src="./scriptfund-profileimg.png"
                 style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
+                  maxWidth: "100%",
+                  maxHeight: "100%",
+                  objectFit: "contain", // Maintain aspect ratio
+                  width: "auto", // Allow width to adjust automatically
+                  height: "auto", // Allow height to adjust automatically
                 }}
               />
             </Box>
