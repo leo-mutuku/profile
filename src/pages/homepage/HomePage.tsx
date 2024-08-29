@@ -1,5 +1,6 @@
 import { Box } from "@mui/material";
 import Grid from "@mui/material/Grid";
+import StepperComponent from "../../components/steppercomponent";
 
 type HomePageProps = {
   themeValue: string;
@@ -38,6 +39,7 @@ const HomePage = ({ themeValue }: HomePageProps) => {
             objectFit: "cover", // Ensures the image covers the area while maintaining aspect ratio
           }}
         />
+        <Box sx={{}} />
       </Grid>
       <Grid
         item
@@ -50,7 +52,9 @@ const HomePage = ({ themeValue }: HomePageProps) => {
           alignItems: "center", // Center vertically
         }}
       >
-        <Box>Stepper multicomponet</Box>
+        <Box sx={{ marginTop: "60%" }}>
+          <StepperComponent />
+        </Box>
       </Grid>
     </Grid>
   );
