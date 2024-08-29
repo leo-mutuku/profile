@@ -38,9 +38,9 @@ function App() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              minHeight: "30vh", // Ensures the content is vertically centered
+              minHeight: "30vh",
               backgroundColor: "white",
-              padding: "50px", // Adds some padding around the text
+              padding: "50px",
             }}
           >
             <Typography
@@ -48,11 +48,11 @@ function App() {
               sx={{
                 color: "black",
                 textAlign: "center",
-                maxWidth: "800px", // Limits the width for better readability
-                lineHeight: 1.75, // Adjusts line spacing for better readability
-                fontFamily: "'Roboto', sans-serif", // Uses a clean, readable font
-                fontSize: "1.25rem", // Sets a slightly larger font size for readability
-                letterSpacing: "0.5px", // Adds slight spacing between letters
+                maxWidth: "800px",
+                lineHeight: 1.75,
+                fontFamily: "'Roboto', sans-serif",
+                fontSize: { xs: "1rem", md: "1.25rem" }, // Adjust font size for mobile and larger screens
+                letterSpacing: "0.5px",
               }}
             >
               I am a highly skilled Frontend Developer with over 6 years of
