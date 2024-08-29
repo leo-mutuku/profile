@@ -1,6 +1,7 @@
 import { Box, Divider, Grid, Typography } from "@mui/material";
 import { useState, lazy } from "react";
 import CustomSuspense from "./components/CustomSuspense";
+import ProjectsPage from "./pages/projectspage";
 
 // Lazy load the HomePage component
 const AppBarComponent = lazy(() => import("./components/appbar"));
@@ -66,6 +67,9 @@ function App() {
           </Box>
         </CustomSuspense>
         {/* projects */}
+        <CustomSuspense>
+          <ProjectsPage themeValue={theme} />
+        </CustomSuspense>
 
         {/* Mentorsship */}
       </Grid>
