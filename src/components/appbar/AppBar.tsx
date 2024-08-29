@@ -11,54 +11,57 @@ const AppBarComponent = ({
   handleThemeChange,
 }: AppBarComponentProps) => {
   return (
-    <AppBar
-      position="relative"
-      elevation={0}
-      sx={{
-        background: themeValue === "dark" ? "black" : "white",
-        padding: "3px 3px",
-      }}
-    >
-      <Toolbar
-        variant="dense"
-        sx={{ display: "flex", justifyContent: "space-between" }}
+    <Box>
+      <AppBar
+        position="relative"
+        elevation={0}
+        sx={{
+          background: themeValue === "dark" ? "black" : "white",
+          padding: "3px 3px",
+          height: "10vh",
+        }}
       >
-        <Box
-          display="flex"
-          flexDirection="row"
-          justifyContent="space-between"
-          alignItems="center"
-          p={1}
+        <Toolbar
+          variant="dense"
+          sx={{ display: "flex", justifyContent: "space-between" }}
         >
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{
-              fontFamily: "'Courier New', monospace",
-              fontSize: { xs: "20px", md: "38px" },
-              color: themeValue === "light" ? "black" : "#ff4500",
-              textAlign: "center",
-              background: "linear-gradient(to right, #ffdf00, #ff4500)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              textShadow: "4px 4px 0 rgba(0,0,0,0.1)",
-              letterSpacing: "2px",
-            }}
+          <Box
+            display="flex"
+            flexDirection="row"
+            justifyContent="space-between"
+            alignItems="center"
+            p={1}
           >
-            Leo Mutuku's Profile.
-          </Typography>
-        </Box>
+            <Typography
+              variant="h6"
+              component="div"
+              sx={{
+                fontFamily: "'Courier New', monospace",
+                fontSize: { xs: "20px", md: "38px" },
+                color: themeValue === "light" ? "black" : "#ff4500",
+                textAlign: "center",
+                background: "linear-gradient(to right, #ffdf00, #ff4500)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                textShadow: "4px 4px 0 rgba(0,0,0,0.1)",
+                letterSpacing: "2px",
+              }}
+            >
+              Leo Mutuku's Profile.
+            </Typography>
+          </Box>
 
-        <Stack>
-          <Button>
-            <ToggleButtonNotEmpty
-              themeValue={themeValue}
-              handleThemeChange={handleThemeChange}
-            />
-          </Button>
-        </Stack>
-      </Toolbar>
-    </AppBar>
+          <Stack>
+            <Button>
+              <ToggleButtonNotEmpty
+                themeValue={themeValue}
+                handleThemeChange={handleThemeChange}
+              />
+            </Button>
+          </Stack>
+        </Toolbar>
+      </AppBar>
+    </Box>
   );
 };
 
