@@ -1,5 +1,6 @@
-import { Box, Stack } from "@mui/material";
+import { Box, Modal, Stack } from "@mui/material";
 import Grid from "@mui/material/Grid";
+import { useState } from "react";
 
 import { Doughnut } from "react-chartjs-2";
 import {
@@ -50,6 +51,15 @@ type HomePageProps = {
 };
 
 const ProjectsPage = ({ themeValue }: HomePageProps) => {
+  const [isZoomed, setIsZoomed] = useState(false);
+
+  const handleImageClick = () => {
+    setIsZoomed(true);
+  };
+
+  const handleClose = () => {
+    setIsZoomed(false);
+  };
   return (
     <>
       <Box sx={{ background: "red" }}>
@@ -186,7 +196,7 @@ const ProjectsPage = ({ themeValue }: HomePageProps) => {
                 justifyContent: "center",
                 alignItems: "center",
                 height: "100%",
-                width: "100%", // Ensure the chart takes up the full width
+                width: "100%",
               }}
             >
               <Box
@@ -194,15 +204,58 @@ const ProjectsPage = ({ themeValue }: HomePageProps) => {
                   width: { xs: "10rem", md: "20rem" },
                   height: { xs: "7.5rem", md: "15rem" },
                   display: "flex",
-                  justifyContent: "center", // Center horizontally
-                  alignItems: "center", // Center vertically
+                  justifyContent: "center",
+                  alignItems: "center",
                 }}
               >
-                <img src="./scriptfund-profileimg.png" />
+                <img
+                  src="./scriptfund-profileimg.png"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    cursor: "pointer", // Pointer cursor to indicate it's clickable
+                  }}
+                  onClick={handleImageClick}
+                />
               </Box>
             </Stack>
           </Grid>
         </Grid>
+        <Box>
+          <Modal
+            open={isZoomed}
+            onClose={handleClose}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              backgroundColor: "rgba(0, 0, 0, 0.5)", // Dark overlay
+            }}
+          >
+            <Box
+              sx={{
+                width: { xs: "80vw", md: "80vw" },
+                height: { xs: "80vh", md: "80vh" },
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                backgroundColor: "white",
+                boxShadow: 24, // Adds a shadow effect
+                p: 2,
+              }}
+            >
+              <img
+                src="./scriptfund-profileimg.png"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                }}
+              />
+            </Box>
+          </Modal>
+        </Box>
       </Box>
     </>
   );
