@@ -1,6 +1,5 @@
 import { Box, Stack, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
-
 import { FaGithub } from "react-icons/fa";
 import { CiLinkedin } from "react-icons/ci";
 import { FaXTwitter } from "react-icons/fa6";
@@ -14,6 +13,7 @@ import {
 } from "chart.js";
 
 ChartJS.register(ArcElement);
+
 const data: ChartData<"doughnut"> = {
   datasets: [
     {
@@ -29,6 +29,7 @@ const data: ChartData<"doughnut"> = {
 const options: ChartOptions<"doughnut"> = {
   cutout: "90%",
 };
+
 const centerTextPlugin: Plugin<"doughnut"> = {
   id: "centerTextPlugin",
   beforeDraw: function (chart) {
@@ -36,7 +37,7 @@ const centerTextPlugin: Plugin<"doughnut"> = {
     ctx.save();
     const text = "6yrs XP"; // Text to display
     ctx.font = "bold 20px Arial"; // Font size and style
-    ctx.fillStyle = "#4caf50"; // Text color
+    ctx.fillStyle = "#fff"; // Text color
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     const centerX = width / 2;
@@ -67,31 +68,38 @@ const HomePage = ({ themeValue }: HomePageProps) => {
             sx={{
               flex: { xs: "1 0 15rem", md: "1 0 45rem" },
               height: { xs: "15rem", md: "30rem" },
-              background: "transparenet",
-              display: "flex", // Enable flexbox
-              justifyContent: "center", // Center horizontally
-              alignItems: "center", // Center vertically
+              background: "transparent",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
             }}
           >
-            <Stack>
+            <Stack alignItems="center">
               <Box
                 component="img"
                 src="/profile.webp" // Path to your image in the public folder
                 alt="Description of image"
                 sx={{
                   borderRadius: "50%", // Makes the image circular
-                  marginLeft: { xs: "18%", md: " 10%" },
                   width: { xs: "6rem", md: "12rem" }, // Fixed width
                   height: { xs: "6rem", md: "12rem" }, // Fixed height
                   objectFit: "cover", // Ensures the image covers the area while maintaining aspect ratio
                 }}
               />
               <br />
-              <Box
-                style={{
+              <Typography
+                variant="h5"
+                sx={{
                   color: "white",
-                  position: "relative",
-
+                  textAlign: "center",
+                }}
+              >
+                Frontend Software Developer
+              </Typography>
+              <br />
+              <Box
+                sx={{
+                  color: "white",
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
@@ -99,32 +107,8 @@ const HomePage = ({ themeValue }: HomePageProps) => {
                   textAlign: "center",
                 }}
               >
-                <Typography variant="h5">
-                  Frontend Software Developer
-                </Typography>
-              </Box>
-              <br></br>
-
-              <Box
-                style={{
-                  color: "white",
-                  position: "relative",
-
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  width: "100%",
-                  textAlign: "center",
-                }}
-              >
-                <span>
-                  <FaGithub size={20} />
-                </span>{" "}
-                &nbsp; &nbsp;
-                <span>
-                  <CiLinkedin size={20} />
-                </span>{" "}
-                &nbsp; &nbsp;
+                <FaGithub size={20} /> &nbsp; &nbsp;
+                <CiLinkedin size={20} /> &nbsp; &nbsp;
                 <FaXTwitter size={20} />
               </Box>
             </Stack>
@@ -134,14 +118,13 @@ const HomePage = ({ themeValue }: HomePageProps) => {
             sx={{
               flex: { xs: "1 0 15rem", md: "1 0 45rem" },
               height: { xs: "15rem", md: "30rem" },
-              background: "transparenet",
-              display: "flex", // Enable flexbox
-              justifyContent: "center", // Center horizontally
-              alignItems: "center", // Center vertically
+              background: "transparent",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
             }}
           >
             <Stack>
-              {" "}
               <Box
                 sx={{
                   width: { xs: "10rem", md: "20rem" },

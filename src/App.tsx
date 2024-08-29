@@ -1,4 +1,4 @@
-import { Divider, Grid } from "@mui/material";
+import { Box, Divider, Grid, Typography } from "@mui/material";
 import { useState, lazy } from "react";
 import CustomSuspense from "./components/CustomSuspense";
 
@@ -31,6 +31,39 @@ function App() {
 
         <CustomSuspense>
           <HomePage themeValue={theme} />
+        </CustomSuspense>
+        <CustomSuspense>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              minHeight: "30vh", // Ensures the content is vertically centered
+              backgroundColor: "white",
+              padding: "50px", // Adds some padding around the text
+            }}
+          >
+            <Typography
+              variant="h6"
+              sx={{
+                color: "black",
+                textAlign: "center",
+                maxWidth: "800px", // Limits the width for better readability
+                lineHeight: 1.75, // Adjusts line spacing for better readability
+                fontFamily: "'Roboto', sans-serif", // Uses a clean, readable font
+                fontSize: "1.25rem", // Sets a slightly larger font size for readability
+                letterSpacing: "0.5px", // Adds slight spacing between letters
+              }}
+            >
+              I am a highly skilled Frontend Developer with over 6 years of
+              experience in creating responsive, user-friendly web applications.
+              My expertise lies in leveraging modern frontend technologies such
+              as Angular, React, VueJS, TypeScript, and UI Libraries to build
+              high-performance, scalable solutions. I have a strong background
+              in developing intuitive user interfaces and optimizing user
+              experiences, coupled with a keen eye for design and detail.
+            </Typography>
+          </Box>
         </CustomSuspense>
       </Grid>
     </>
