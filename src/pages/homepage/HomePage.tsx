@@ -84,7 +84,7 @@ const HomePage = ({ themeValue }: HomePageProps) => {
             src="/profile.webp" // Path to your image in the public folder
             alt="Description of image"
             sx={{
-              marginTop: "60%",
+              marginTop: "10%",
               borderRadius: "50%", // Makes the image circular
               width: "200px", // Fixed width
               height: "200px", // Fixed height
@@ -104,7 +104,7 @@ const HomePage = ({ themeValue }: HomePageProps) => {
             alignItems: "center", // Center vertically
           }}
         >
-          <Box sx={{ marginTop: "60%" }}>
+          <Box sx={{ marginTop: "10%" }}>
             <Typography>Skills</Typography>
             <StepperComponent />
           </Box>
