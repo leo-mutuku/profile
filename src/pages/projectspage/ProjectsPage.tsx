@@ -1,8 +1,6 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import Grid from "@mui/material/Grid";
-import { FaGithub } from "react-icons/fa";
-import { CiLinkedin } from "react-icons/ci";
-import { FaXTwitter } from "react-icons/fa6";
+
 import { Doughnut } from "react-chartjs-2";
 import {
   Chart as ChartJS,
