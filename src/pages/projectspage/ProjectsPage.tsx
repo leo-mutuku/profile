@@ -51,14 +51,17 @@ type HomePageProps = {
 };
 
 const ProjectsPage = ({ themeValue }: HomePageProps) => {
-  const [isZoomed, setIsZoomed] = useState(false);
+  const [isZoomed, setIsZoomed] = useState<boolean>(false);
+  const [imageUrl, setImageUrl] = useState<string>("");
 
-  const handleImageClick = () => {
+  const handleImageClick = (url: string) => {
+    setImageUrl(url);
     setIsZoomed(true);
   };
 
   const handleClose = () => {
     setIsZoomed(false);
+    setImageUrl("");
   };
   return (
     <>
@@ -88,7 +91,7 @@ const ProjectsPage = ({ themeValue }: HomePageProps) => {
                 justifyContent: "center",
                 alignItems: "center",
                 height: "100%",
-                width: "100%", // Ensure the chart takes up the full width
+                width: "100%",
               }}
             >
               <Box
@@ -96,11 +99,20 @@ const ProjectsPage = ({ themeValue }: HomePageProps) => {
                   width: { xs: "10rem", md: "20rem" },
                   height: { xs: "7.5rem", md: "15rem" },
                   display: "flex",
-                  justifyContent: "center", // Center horizontally
-                  alignItems: "center", // Center vertically
+                  justifyContent: "center",
+                  alignItems: "center",
                 }}
               >
-                <img src="./amini-ai-profileimg.png" />
+                <img
+                  src="./amini-ai-profileimg.png"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    cursor: "pointer", // Pointer cursor to indicate it's clickable
+                  }}
+                  onClick={() => handleImageClick("./amini-ai-profileimg.png")}
+                />
               </Box>
             </Stack>
           </Grid>
@@ -121,7 +133,7 @@ const ProjectsPage = ({ themeValue }: HomePageProps) => {
                 justifyContent: "center",
                 alignItems: "center",
                 height: "100%",
-                width: "100%", // Ensure the chart takes up the full width
+                width: "100%",
               }}
             >
               <Box
@@ -129,14 +141,19 @@ const ProjectsPage = ({ themeValue }: HomePageProps) => {
                   width: { xs: "10rem", md: "20rem" },
                   height: { xs: "7.5rem", md: "15rem" },
                   display: "flex",
-                  justifyContent: "center", // Center horizontally
-                  alignItems: "center", // Center vertically
+                  justifyContent: "center",
+                  alignItems: "center",
                 }}
               >
-                <Doughnut
-                  data={data}
-                  options={options}
-                  plugins={[centerTextPlugin]}
+                <img
+                  src="./bluetrax-profile-img.png"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    cursor: "pointer", // Pointer cursor to indicate it's clickable
+                  }}
+                  onClick={() => handleImageClick("./bluetrax-profile-img.png")}
                 />
               </Box>
             </Stack>
@@ -216,7 +233,9 @@ const ProjectsPage = ({ themeValue }: HomePageProps) => {
                     objectFit: "cover",
                     cursor: "pointer", // Pointer cursor to indicate it's clickable
                   }}
-                  onClick={handleImageClick}
+                  onClick={() =>
+                    handleImageClick("./scriptfund-profileimg.png")
+                  }
                 />
               </Box>
             </Stack>
@@ -246,7 +265,7 @@ const ProjectsPage = ({ themeValue }: HomePageProps) => {
               }}
             >
               <img
-                src="./scriptfund-profileimg.png"
+                src={imageUrl}
                 style={{
                   maxWidth: "100%",
                   maxHeight: "100%",
