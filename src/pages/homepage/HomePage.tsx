@@ -1,13 +1,55 @@
 import { Box, Stack, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
-import StepperComponent from "../../components/steppercomponent";
+
 import { FaGithub } from "react-icons/fa";
 import { CiLinkedin } from "react-icons/ci";
 import { FaXTwitter } from "react-icons/fa6";
+import { Doughnut } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  ArcElement,
+  ChartOptions,
+  ChartData,
+  Plugin,
+} from "chart.js";
+
+ChartJS.register(ArcElement);
+const data: ChartData<"doughnut"> = {
+  datasets: [
+    {
+      data: [100, 0], // 70% filled, 30% empty
+      backgroundColor: ["#ff6100", "#e0e0e0"],
+      borderWidth: 0,
+      circumference: 360,
+      rotation: 270,
+    },
+  ],
+};
+
+const options: ChartOptions<"doughnut"> = {
+  cutout: "90%",
+};
+const centerTextPlugin: Plugin<"doughnut"> = {
+  id: "centerTextPlugin",
+  beforeDraw: function (chart) {
+    const { ctx, width, height } = chart;
+    ctx.save();
+    const text = "6yrs XP"; // Text to display
+    ctx.font = "bold 20px Arial"; // Font size and style
+    ctx.fillStyle = "#4caf50"; // Text color
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    const centerX = width / 2;
+    const centerY = height / 2;
+    ctx.fillText(text, centerX, centerY);
+    ctx.restore();
+  },
+};
 
 type HomePageProps = {
   themeValue: string;
 };
+
 const HomePage = ({ themeValue }: HomePageProps) => {
   return (
     <>
@@ -16,7 +58,7 @@ const HomePage = ({ themeValue }: HomePageProps) => {
           container
           gap={3}
           sx={{
-            background: themeValue === "dark" ? "black" : "white",
+            background: themeValue === "dark" ? "black" : "#3c70d9",
             padding: "15px 30px",
           }}
         >
@@ -24,8 +66,8 @@ const HomePage = ({ themeValue }: HomePageProps) => {
             item
             sx={{
               flex: { xs: "1 0 15rem", md: "1 0 45rem" },
-              height: { xs: "25rem", md: "50rem" },
-              background: "red",
+              height: { xs: "15rem", md: "30rem" },
+              background: "transparenet",
               display: "flex", // Enable flexbox
               justifyContent: "center", // Center horizontally
               alignItems: "center", // Center vertically
@@ -38,9 +80,9 @@ const HomePage = ({ themeValue }: HomePageProps) => {
                 alt="Description of image"
                 sx={{
                   borderRadius: "50%", // Makes the image circular
-                  marginLeft: { xs: "27%", md: " 15%%" },
-                  width: { xs: "10rem", md: "20rem" }, // Fixed width
-                  height: { xs: "10rem", md: "20rem" }, // Fixed height
+                  marginLeft: { xs: "18%", md: " 10%" },
+                  width: { xs: "6rem", md: "12rem" }, // Fixed width
+                  height: { xs: "6rem", md: "12rem" }, // Fixed height
                   objectFit: "cover", // Ensures the image covers the area while maintaining aspect ratio
                 }}
               />
@@ -57,7 +99,9 @@ const HomePage = ({ themeValue }: HomePageProps) => {
                   textAlign: "center",
                 }}
               >
-                <Typography variant="h3">Siddharth Kumar</Typography>
+                <Typography variant="h5">
+                  Frontend Software Developer
+                </Typography>
               </Box>
               <br></br>
 
@@ -74,31 +118,42 @@ const HomePage = ({ themeValue }: HomePageProps) => {
                 }}
               >
                 <span>
-                  <FaGithub size={25} />
+                  <FaGithub size={20} />
                 </span>{" "}
                 &nbsp; &nbsp;
                 <span>
-                  <CiLinkedin size={25} />
+                  <CiLinkedin size={20} />
                 </span>{" "}
                 &nbsp; &nbsp;
-                <FaXTwitter size={25} />
+                <FaXTwitter size={20} />
               </Box>
             </Stack>
           </Grid>
           <Grid
             item
             sx={{
-              flex: { xs: "1 0 15rem", md: "1 0 15rem" },
-              height: { xs: "5rem", md: "5rem" },
-              background: "transparent",
+              flex: { xs: "1 0 15rem", md: "1 0 45rem" },
+              height: { xs: "15rem", md: "30rem" },
+              background: "transparenet",
               display: "flex", // Enable flexbox
               justifyContent: "center", // Center horizontally
               alignItems: "center", // Center vertically
             }}
           >
-            <Stack sx={{ marginTop: "50%" }}>
-              <Typography>Skills</Typography>
-              <StepperComponent />
+            <Stack>
+              {" "}
+              <Box
+                sx={{
+                  width: { xs: "10rem", md: "20rem" },
+                  height: { xs: "7.5rem", md: "15rem" },
+                }}
+              >
+                <Doughnut
+                  data={data}
+                  options={options}
+                  plugins={[centerTextPlugin]}
+                />
+              </Box>
             </Stack>
           </Grid>
         </Grid>
