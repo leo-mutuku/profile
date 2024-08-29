@@ -119,7 +119,7 @@ const ProjectsPage = ({ themeValue }: HomePageProps) => {
                 }}
               >
                 <img
-                  src="./amini-ai-profileimg.png"
+                  src="./bluetrax-profile-img.png"
                   alt="Profile"
                   style={{
                     width: "100%",
@@ -127,7 +127,7 @@ const ProjectsPage = ({ themeValue }: HomePageProps) => {
                     objectFit: "cover", // Ensure the image fully covers the Box
                     cursor: "pointer",
                   }}
-                  onClick={() => handleImageClick("./amini-ai-profileimg.png")}
+                  onClick={() => handleImageClick("./bluetrax-profile-img.png")}
                 />
               </Box>
             </Stack>
