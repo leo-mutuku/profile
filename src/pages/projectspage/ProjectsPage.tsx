@@ -175,7 +175,7 @@ const ProjectsPage = ({ themeValue }: HomePageProps) => {
                 justifyContent: "center",
                 alignItems: "center",
                 height: "100%",
-                width: "100%", // Ensure the chart takes up the full width
+                width: "100%",
               }}
             >
               <Box
@@ -183,14 +183,19 @@ const ProjectsPage = ({ themeValue }: HomePageProps) => {
                   width: { xs: "10rem", md: "20rem" },
                   height: { xs: "7.5rem", md: "15rem" },
                   display: "flex",
-                  justifyContent: "center", // Center horizontally
-                  alignItems: "center", // Center vertically
+                  justifyContent: "center",
+                  alignItems: "center",
                 }}
               >
-                <Doughnut
-                  data={data}
-                  options={options}
-                  plugins={[centerTextPlugin]}
+                <img
+                  src="./novena.PNG"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    cursor: "pointer", // Pointer cursor to indicate it's clickable
+                  }}
+                  onClick={() => handleImageClick("./novena.PNG")}
                 />
               </Box>
             </Stack>
