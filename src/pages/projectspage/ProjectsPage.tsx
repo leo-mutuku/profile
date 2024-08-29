@@ -2,49 +2,9 @@ import { Box, Modal, Stack } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import { useState } from "react";
 
-import { Doughnut } from "react-chartjs-2";
-import {
-  Chart as ChartJS,
-  ArcElement,
-  ChartOptions,
-  ChartData,
-  Plugin,
-} from "chart.js";
+import { Chart as ChartJS, ArcElement } from "chart.js";
 
 ChartJS.register(ArcElement);
-
-const data: ChartData<"doughnut"> = {
-  datasets: [
-    {
-      data: [100, 0], // 70% filled, 30% empty
-      backgroundColor: ["#ff6100", "#e0e0e0"],
-      borderWidth: 0,
-      circumference: 360,
-      rotation: 270,
-    },
-  ],
-};
-
-const options: ChartOptions<"doughnut"> = {
-  cutout: "90%",
-};
-
-const centerTextPlugin: Plugin<"doughnut"> = {
-  id: "centerTextPlugin",
-  beforeDraw: function (chart) {
-    const { ctx, width, height } = chart;
-    ctx.save();
-    const text = "6yrs XP"; // Text to display
-    ctx.font = "bold 20px Arial"; // Font size and style
-    ctx.fillStyle = "#fff"; // Text color
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-    const centerX = width / 2;
-    const centerY = height / 2;
-    ctx.fillText(text, centerX, centerY);
-    ctx.restore();
-  },
-};
 
 type HomePageProps = {
   themeValue: string;
