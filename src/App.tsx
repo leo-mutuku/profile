@@ -65,6 +65,9 @@ function App() {
             </Typography>
           </Box>
         </CustomSuspense>
+        {/* projects */}
+
+        {/* Mentorsship */}
       </Grid>
     </>
   );
