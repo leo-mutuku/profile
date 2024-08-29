@@ -56,6 +56,36 @@ const HomePage = ({ themeValue }: HomePageProps) => {
           <StepperComponent />
         </Box>
       </Grid>
+      <Grid
+        item
+        sx={{
+          flex: { xs: "1 0 15rem", md: "1 0 15rem" },
+          height: { xs: "5rem", md: "5rem" },
+          background: "transparent",
+          display: "flex", // Enable flexbox
+          justifyContent: "center", // Center horizontally
+          alignItems: "center", // Center vertically
+        }}
+      >
+        <Box sx={{ marginTop: "60%" }}>
+          <StepperComponent />
+        </Box>
+      </Grid>
+      <Grid
+        item
+        sx={{
+          flex: { xs: "1 0 15rem", md: "1 0 15rem" },
+          height: { xs: "5rem", md: "5rem" },
+          background: "transparent",
+          display: "flex", // Enable flexbox
+          justifyContent: "center", // Center horizontally
+          alignItems: "center", // Center vertically
+        }}
+      >
+        <Box sx={{ marginTop: "60%" }}>
+          <StepperComponent />
+        </Box>
+      </Grid>
     </Grid>
   );
 };

@@ -64,7 +64,7 @@ export default function StepperComponent() {
           alignItems: "center",
           height: 50,
           pl: 2,
-          bgcolor: "background.default",
+          bgcolor: "transparent",
         }}
       >
         <Typography>{steps[activeStep].label}</Typography>
