@@ -1,6 +1,9 @@
 import { Box, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import StepperComponent from "../../components/steppercomponent";
+import { FaGithub } from "react-icons/fa";
+import { CiLinkedin } from "react-icons/ci";
+import { FaXTwitter } from "react-icons/fa6";
 
 type HomePageProps = {
   themeValue: string;
@@ -40,7 +43,34 @@ const HomePage = ({ themeValue }: HomePageProps) => {
               objectFit: "cover", // Ensures the image covers the area while maintaining aspect ratio
             }}
           />
-          <Box sx={{}} />
+          <h6
+            style={{ color: "white", position: "absolute", marginTop: "50%" }}
+          >
+            Frontend Software Developer
+          </h6>
+
+          <Box
+            style={{
+              color: "white",
+              position: "absolute",
+              marginTop: "55%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              width: "100%",
+              textAlign: "center",
+            }}
+          >
+            <span>
+              <FaGithub size={25} />
+            </span>{" "}
+            &nbsp; &nbsp;
+            <span>
+              <CiLinkedin size={25} />
+            </span>{" "}
+            &nbsp; &nbsp;
+            <FaXTwitter size={25} />
+          </Box>
         </Grid>
         <Grid
           item
@@ -84,7 +114,7 @@ const HomePage = ({ themeValue }: HomePageProps) => {
             src="/profile.webp" // Path to your image in the public folder
             alt="Description of image"
             sx={{
-              marginTop: "10%",
+              marginTop: "20%",
               borderRadius: "50%", // Makes the image circular
               width: "200px", // Fixed width
               height: "200px", // Fixed height
@@ -104,7 +134,7 @@ const HomePage = ({ themeValue }: HomePageProps) => {
             alignItems: "center", // Center vertically
           }}
         >
-          <Box sx={{ marginTop: "10%" }}>
+          <Box sx={{ marginTop: "20%" }}>
             <Typography>Skills</Typography>
             <StepperComponent />
           </Box>
