@@ -12,7 +12,7 @@ const AppBarComponent = ({
 }: AppBarComponentProps) => {
   return (
     <AppBar
-      position="sticky"
+      position="relative"
       elevation={0}
       sx={{
         background: themeValue === "dark" ? "black" : "white",

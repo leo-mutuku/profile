@@ -15,19 +15,18 @@ function App() {
 
   return (
     <>
-      <Grid>
-        <CustomSuspense>
-          <AppBarComponent
-            themeValue={theme}
-            handleThemeChange={handleThemeChange}
-          />
-        </CustomSuspense>
-        <Divider />
-        {/* Wrap the lazy-loaded component in Suspense */}
-        <CustomSuspense>
-          <HomePage themeValue={theme} />
-        </CustomSuspense>
-      </Grid>
+      <CustomSuspense>
+        <AppBarComponent
+          themeValue={theme}
+          handleThemeChange={handleThemeChange}
+        />
+      </CustomSuspense>
+      <Divider />
+      {/* Wrap the lazy-loaded component in Suspense */}
+
+      <CustomSuspense>
+        <HomePage themeValue={theme} />
+      </CustomSuspense>
     </>
   );
 }
