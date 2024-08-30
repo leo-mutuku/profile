@@ -3,6 +3,7 @@ import { useState, lazy } from "react";
 import CustomSuspense from "./components/CustomSuspense";
 import ProjectsPage from "./pages/projectspage";
 import BasicCanvas from "./components/threejs";
+import SkillList from "./pages/homepage/SkillsPage";
 
 // Lazy load the HomePage component
 const AppBarComponent = lazy(() => import("./components/appbar"));
@@ -77,7 +78,33 @@ function App() {
           <ProjectsPage themeValue={theme} />
         </CustomSuspense>
         <CustomSuspense>
-          <BasicCanvas />
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              minHeight: "30vh",
+              backgroundColor: "white",
+              padding: "50px",
+            }}
+          >
+            <Typography
+              variant="h6"
+              sx={{
+                color: "black",
+                textAlign: "center",
+                maxWidth: "800px",
+                lineHeight: 1.75,
+                fontFamily: "'Roboto', sans-serif",
+                fontSize: { xs: "1rem", md: "1.25rem" }, // Adjust font size for mobile and larger screens
+                letterSpacing: "0.5px",
+              }}
+            >
+              <strong>Skills & Tech Stack</strong>,
+              <BasicCanvas />
+              <SkillList />
+            </Typography>
+          </Box>
         </CustomSuspense>
 
         {/* Mentorsship */}
