@@ -2,6 +2,7 @@ import { Box, Divider, Grid, Typography } from "@mui/material";
 import { useState, lazy } from "react";
 import CustomSuspense from "./components/CustomSuspense";
 import ProjectsPage from "./pages/projectspage";
+import BasicCanvas from "./components/threejs";
 
 // Lazy load the HomePage component
 const AppBarComponent = lazy(() => import("./components/appbar"));
@@ -56,6 +57,11 @@ function App() {
                 letterSpacing: "0.5px",
               }}
             >
+              <strong>Profile Summary</strong>,
+              <>
+                {" "}
+                <BasicCanvas />
+              </>
               I am a highly skilled Frontend Developer with over 6 years of
               experience in creating responsive, user-friendly web applications.
               My expertise lies in leveraging modern frontend technologies such
@@ -69,6 +75,9 @@ function App() {
         {/* projects */}
         <CustomSuspense>
           <ProjectsPage themeValue={theme} />
+        </CustomSuspense>
+        <CustomSuspense>
+          <BasicCanvas />
         </CustomSuspense>
 
         {/* Mentorsship */}
