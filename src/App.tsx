@@ -4,6 +4,7 @@ import CustomSuspense from "./components/CustomSuspense";
 import ProjectsPage from "./pages/projectspage";
 import BasicCanvas from "./components/threejs";
 import SkillList from "./pages/homepage/SkillsPage";
+import Footer from "./pages/footerpage";
 
 // Lazy load the HomePage component
 const AppBarComponent = lazy(() => import("./components/appbar"));
@@ -108,6 +109,10 @@ function App() {
         </CustomSuspense>
 
         {/* Mentorsship */}
+
+        <CustomSuspense>
+          <Footer />
+        </CustomSuspense>
       </Grid>
     </>
   );
