@@ -6,21 +6,26 @@ import {
   ListItemText,
   IconButton,
 } from "@mui/material";
-import CodeIcon from "@mui/icons-material/Code";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import CloudIcon from "@mui/icons-material/Cloud";
+import { FaGithub, FaAws } from "react-icons/fa";
+import { SiAzuredevops } from "react-icons/si";
+
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { SiSpringboot } from "react-icons/si";
+import { FaNodeJs } from "react-icons/fa";
+import { IoLogoReact } from "react-icons/io5";
+import { RiAngularjsLine } from "react-icons/ri";
+import { IoLogoVue } from "react-icons/io5";
 
 const skills = [
-  { name: "Spring Boot", icon: <CodeIcon /> },
-  { name: "Express.js", icon: <CodeIcon /> },
-  { name: "React", icon: <CodeIcon /> },
-  { name: "Angular", icon: <CodeIcon /> },
-  { name: "Vue.js", icon: <CodeIcon /> },
-  { name: "Git", icon: <GitHubIcon /> },
-  { name: "DevOps", icon: <CloudIcon /> },
-  { name: "AWS", icon: <CloudIcon /> },
+  { name: "Spring Boot", icon: <SiSpringboot /> },
+  { name: "Express.js", icon: <FaNodeJs /> },
+  { name: "React", icon: <IoLogoReact /> },
+  { name: "Angular", icon: <RiAngularjsLine /> },
+  { name: "Vue.js", icon: <IoLogoVue /> },
+  { name: "Git", icon: <FaGithub /> },
+  { name: "DevOps", icon: <SiAzuredevops /> },
+  { name: "AWS", icon: <FaAws /> },
 ];
 
 function SkillList() {
