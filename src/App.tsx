@@ -11,7 +11,7 @@ const AppBarComponent = lazy(() => import("./components/appbar"));
 const HomePage = lazy(() => import("./pages/homepage"));
 
 function App() {
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const [theme, setTheme] = useState<"dark" | "light">("light");
 
   const handleThemeChange = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
