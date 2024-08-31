@@ -59,7 +59,7 @@ const HomePage = ({ themeValue }: HomePageProps) => {
           container
           gap={3}
           sx={{
-            background: themeValue === "dark" ? "black" : "#3c70d9",
+            background: themeValue === "light" ? "#3c70d9" : "black",
             padding: "15px 30px",
           }}
         >

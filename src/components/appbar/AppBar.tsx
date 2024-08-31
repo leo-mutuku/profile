@@ -16,7 +16,7 @@ const AppBarComponent = ({
         position="relative"
         elevation={0}
         sx={{
-          background: themeValue === "dark" ? "black" : "#3c70d9",
+          background: themeValue === "light" ? "#3c70d9" : "black",
           padding: "3px 3px",
           height: "10vh",
         }}
