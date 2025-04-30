@@ -22,7 +22,6 @@ const skills = [
   { name: "Express.js", icon: <FaNodeJs /> },
   { name: "React", icon: <IoLogoReact /> },
   { name: "Angular", icon: <RiAngularjsLine /> },
-  { name: "Vue.js", icon: <IoLogoVue /> },
   { name: "Git", icon: <FaGithub /> },
   { name: "DevOps", icon: <SiAzuredevops /> },
   { name: "AWS", icon: <FaAws /> },
