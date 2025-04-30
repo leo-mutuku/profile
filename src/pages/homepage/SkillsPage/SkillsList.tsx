@@ -15,7 +15,7 @@ import { SiSpringboot } from "react-icons/si";
 import { FaNodeJs } from "react-icons/fa";
 import { IoLogoReact } from "react-icons/io5";
 import { RiAngularjsLine } from "react-icons/ri";
-import { IoLogoVue } from "react-icons/io5";
+
 
 const skills = [
   { name: "Spring Boot", icon: <SiSpringboot /> },
