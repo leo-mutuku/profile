@@ -59,18 +59,21 @@ function App() {
                 letterSpacing: "0.5px",
               }}
             >
-              <strong>Profile Summary</strong>,
+              <strong>Full-Stack Developer & DevOps Specialist</strong>
               <>
                 {" "}
                 <BasicCanvas />
               </>
-              I am a highly skilled Frontend Developer with over 6 years of
-              experience in creating responsive, user-friendly web applications.
-              My expertise lies in leveraging modern frontend technologies such
-              as Angular, React, VueJS, TypeScript, and UI Libraries to build
-              high-performance, scalable solutions. I have a strong background
-              in developing intuitive user interfaces and optimizing user
-              experiences, coupled with a keen eye for design and detail.
+              
+Results-driven Full-Stack Developer with 6+ years of experience building scalable web applications that deliver exceptional user experiences. Expertise spans the entire development lifecycle, from intuitive frontend interfaces to robust backend systems and DevOps infrastructure.
+Technical Expertise <br></br>
+
+Frontend: React, Angular, Vue.js, TypeScript, Modern UI Libraries<br></br>
+Backend: Spring Boot, Node.js, C#/.<br></br>
+Cloud & DevOps: AWS, CI/CD Pipeline Management, Infrastructure as Code<br></br>
+SRE Practices: System Reliability, Performance Optimization, Monitoring<br></br>
+
+Adept at bridging technical gaps between frontend and backend systems while implementing DevOps methodologies that enhance development velocity and system reliability. Consistently delivers elegant solutions that balance technical excellence with business objectives.
             </Typography>
           </Box>
         </CustomSuspense>
