@@ -94,7 +94,7 @@ const HomePage = ({ themeValue }: HomePageProps) => {
                   textAlign: "center",
                 }}
               >
-                Frontend Software Developer
+                Fullstack Software Engineer
               </Typography>
               <br />
               <Box

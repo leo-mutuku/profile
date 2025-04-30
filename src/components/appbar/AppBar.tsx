@@ -47,7 +47,7 @@ const AppBarComponent = ({
                 letterSpacing: "2px",
               }}
             >
-              Leo Mutuku's Profile.
+              Leonard Mutuku's Profile.
             </Typography>
           </Box>
 
